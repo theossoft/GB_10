@@ -19,6 +19,9 @@ count = float(0.0)
 max_element = 0
 
 for el in range(0, len(some_list)):
+    if x == float(some_list[el]):
+        max_element = some_list[el]
+        break
     if x > some_list[el] and (some_list[el] / x) > count:
         count = (some_list[el] / x)
         max_element = some_list[el]
@@ -26,4 +29,4 @@ for el in range(0, len(some_list)):
         count = (x / some_list[el])
         max_element = some_list[el]
 
-print(int(max_element))
+print(f"Самый близкий по величине элемент к заданному числу {int(x)}: {int(max_element)}")
