@@ -9,20 +9,21 @@
 #     6
 #     -> 5
 
-N = int(input("Введите количество элементов в списке: "))
+N = abs(int(input("Введите количество элементов в списке: ")))
 some_list = []
 for i in range(0, N):
-    some_list.append(float(input(f"Введите {i+1} число: ")))
-x = int(input("Введите искомое число: "))
+    some_list.append(abs(float(input(f"Введите {i+1} число: "))))
+x = abs(float(input("Введите искомое число: ")))
 
-max_element = abs(x - some_list[0])
-count = 0
-for i in range(1, N):
-    if x > some_list[i]:
-        count = abs(x - some_list[i])
-        if count > max_element:
-            max_element = count
+count = float(0.0)
+max_element = 0
+
+for el in range(0, len(some_list)):
+    if x > some_list[el] and (some_list[el] / x) > count:
+        count = (some_list[el] / x)
+        max_element = some_list[el]
+    elif x < some_list[el] and (x / some_list[el]) > count:
+        count = (x / some_list[el])
+        max_element = some_list[el]
 
 print(int(max_element))
-
-
