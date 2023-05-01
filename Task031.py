@@ -9,15 +9,8 @@
 
 x = []
 def fibonacci(n):
-    if n in (0,1):
-        x.append(1)
-        return 1
-    else:
-        r = fibonacci(n-2) + fibonacci(n-1)
-        x.append(r)
-        return r
+    if n in (0, 1):
+        return n
+    return fibonacci(n - 1) + fibonacci(n - 2)
 
-n = 8
-fibonacci(n)
-fibonacci(n)
-print(x[-(n+1):])
+print(fibonacci(6))
