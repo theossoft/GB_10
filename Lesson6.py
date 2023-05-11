@@ -13,11 +13,11 @@
 #
 # print(is_prime(3))
 
-# Задача 2. Определить является ли предложение палиндромом
+# Задача 2. Определить является ли текст палиндромом
 def is_palindrom(string):
     if len(string) < 2:
         return True
-    if string[0] != string[-1]:
+    if string[0].lower() != string[-1].lower():
         return False
     return is_palindrom(string[1:-1].replace(" ", ""))
 
